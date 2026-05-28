@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greptile PR Badges</title>
+  </head>
+  <body>
+    <main class="settings-shell">
+      <section class="settings-panel">
+        <p class="eyebrow">GitHub PR list overlay</p>
+        <h1>Greptile PR Badges</h1>
+        <p class="lede">
+          Show Greptile scores and stale-review state directly beside pull requests.
+        </p>
+
+        <form id="settings-form" class="settings-form">
+          <label>
+            <span>GitHub token</span>
+            <input id="github-token" type="password" autocomplete="off" placeholder="github_pat_..." />
+          </label>
+          <p class="hint">
+            GraphQL is the primary source. Use a fine-grained GitHub token with read access to target public and private repositories.
+          </p>
+
+          <div class="grid">
+            <label>
+              <span>Cache TTL</span>
+              <select id="cache-ttl">
+                <option value="60000">1 minute</option>
+                <option value="300000">5 minutes</option>
+                <option value="900000">15 minutes</option>
+                <option value="3600000">1 hour</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Batch size</span>
+              <input id="batch-size" type="number" min="2" max="12" step="1" />
+            </label>
+          </div>
+
+          <label class="toggle-row">
+            <input id="show-missing" type="checkbox" />
+            <span>Show “No Greptile” badges</span>
+          </label>
+
+          <div class="actions">
+            <button type="submit">Save settings</button>
+            <button id="test-token" type="button" class="secondary">Test GraphQL</button>
+          </div>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/options.ts"></script>
+  </body>
+</html>

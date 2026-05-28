@@ -1,0 +1,36 @@
+{
+  "name": "@hamedmp/greptile-pr-badges",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome extension that shows Greptile review scores directly on GitHub pull request list views.",
+  "homepage": "https://github.com/hamedmp/greptile-pr-badges#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamedmp/greptile-pr-badges.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hamedmp/greptile-pr-badges/issues"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm run typecheck && pnpm run test && pnpm run build"
+  },
+  "keywords": [
+    "chrome-extension",
+    "github",
+    "greptile",
+    "pull-requests",
+    "code-review"
+  ],
+  "author": "Hamed Moqadam",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.10.2",
+    "typescript": "^5.5.4",
+    "vite": "^6.3.2",
+    "vitest": "^4.0.18"
+  }
+}

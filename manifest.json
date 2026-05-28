@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Greptile PR Badges",
+  "version": "0.1.0",
+  "description": "Shows Greptile review scores and stale-review state on GitHub pull request lists.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.github.com/*"],
+  "action": {
+    "default_title": "Greptile PR Badges"
+  },
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*/pulls*"],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "dist/options.html"
+}
