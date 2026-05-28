@@ -6,7 +6,8 @@
   "permissions": ["storage"],
   "host_permissions": ["https://api.github.com/*"],
   "action": {
-    "default_title": "Greptile PR Badges"
+    "default_title": "Greptile PR Badges",
+    "default_popup": "popup.html"
   },
   "background": {
     "service_worker": "background.js",

@@ -10,6 +10,7 @@ function copyStaticFiles() {
       const dist = join(root, "dist");
       mkdirSync(dist, { recursive: true });
       copyFileSync(join(root, "manifest.dist.json"), join(dist, "manifest.json"));
+      copyFileSync(join(root, "popup.html"), join(dist, "popup.html"));
 
       const publicDir = join(root, "public");
       for (const file of readdirSync(publicDir)) {
