@@ -14,7 +14,7 @@ jobs:
     name: Build and package
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - name: Checkout
@@ -46,3 +46,9 @@ jobs:
           name: greptile-pr-badges
           path: greptile-pr-badges.zip
           if-no-files-found: error
+
+      - name: Attach zip to release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: greptile-pr-badges.zip
